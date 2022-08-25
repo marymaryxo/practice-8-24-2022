@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>hi</title>
+    <style>
+      h1 {
+        font-family: Arial, Helvetica, sans-serif;
+        color: teal;
+        text-align: center;
+      }
+      button {
+        display: block;
+        margin: 0 auto;
+        font-family: Arial, Helvetica, sans-serif;
+        padding: 15px 30px;
+        border-radius: 100px;
+        border-width: 0px;
+        background: darkcyan;
+        color: white;
+        font-size: 20px;
+        transition: ease-in-out 0.15s;
+      }
+      h2 {
+        text-align: center;
+        font-family: Arial, Helvetica, sans-serif;
+        color: darkcyan;
+        font-size: 20px;
+      }
+      button:hover {
+        background-color: rgb(6, 94, 94);
+      }
+    </style>
+  </head>
+  <body>
+    <h1>hello there!</h1>
+    <button>apply now</button>
+    <br />
+    <h2>Apply by August 24, 2022 (Wednesday), 12:00 PM!</h2>
+    <script>
+      function cityPrompt() {
+        let cityName = prompt("what is your city?");
+        cityName = cityName.trim().toLowerCase();
+        let h1 = document.querySelector("h1");
+        if (cityName !== "") {
+          h1.innerHTML = `hello from ${cityName}!`;
+        } else {
+          h1.innerHTML = `welcome to the course!`;
+        }
+      }
+
+      let button = document.querySelector("button");
+      button.addEventListener("click", cityPrompt);
+
+      let now = new Date();
+
+      let months = [
+        "Jan",
+        "Feb",
+        "Mar",
+        "Apr",
+        "May",
+        "June",
+        "July",
+        "Aug",
+        "Sept",
+        "Oct",
+        "Nov",
+        "Dec"
+      ];
+
+      let days = ["Sun", "Mon", "Tues", "Wed", "Thur", "Fri", "Sat"];
+      let month = months[now.getMonth()];
+      let date = now.getDate();
+      let year = now.getFullYear();
+      let day = days[now.getDay()];
+      let hour = now.getHours();
+      let min = now.getMinutes();
+
+      let h2 = document.querySelector("h2");
+      h2.innerHTML = `Apply by ${month} ${date}, ${year} (${day}), ${hour}:${min}!`;
+    </script>
+  </body>
+</html>
